@@ -1,6 +1,8 @@
-const CheckArgType = require('../src/index')
-const ArgTypes = require('../src/ArgTypes')
+const req = require('../helper/req')
 const { assert } = require('chai')
+
+const CheckArgType = req('index')
+const ArgTypes = req('ArgTypes')
 
 /* eslint-disable no-undef */
 

@@ -1,7 +1,9 @@
-/* eslint-disable no-undef */
-
-const PrimitiveType = require('../src/PrimitiveType')
 const { assert } = require('chai')
+const req = require('../helper/req')
+
+const PrimitiveType = req('PrimitiveType')
+
+/* eslint-disable no-undef */
 
 describe('PrimitiveType', () => {
   it('Devuelve un error si no le paso un argumento', () => {

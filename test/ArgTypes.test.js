@@ -1,8 +1,10 @@
-/* eslint-disable no-undef */
-
-const ArgTypes = require('../src/ArgTypes')
-const PrimitiveType = require('../src/PrimitiveType')
 const { assert } = require('chai')
+const req = require('../helper/req')
+
+const ArgTypes = req('ArgTypes')
+const PrimitiveType = req('PrimitiveType')
+
+/* eslint-disable no-undef */
 
 describe('ArgTypes', () => {
   for (const arg in ArgTypes) {
