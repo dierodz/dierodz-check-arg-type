@@ -8,7 +8,7 @@ on:
     branches: [ master-rc ]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
