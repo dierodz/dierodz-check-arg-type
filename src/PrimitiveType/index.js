@@ -9,6 +9,10 @@ class PrimitiveType {
         this.test = value => typeof value === 'number'
         break
       }
+      case 'object': {
+        this.test = value => typeof value === 'object'
+        break
+      }
       case 'string': {
         this.test = value => typeof value === 'string'
         break
