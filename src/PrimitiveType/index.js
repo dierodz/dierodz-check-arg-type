@@ -5,6 +5,10 @@ class PrimitiveType {
         this.test = value => typeof value === 'boolean'
         break
       }
+      case 'function': {
+        this.test = value => typeof value === 'function'
+        break
+      }
       case 'number': {
         this.test = value => typeof value === 'number'
         break
