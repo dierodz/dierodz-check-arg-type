@@ -1,55 +1,56 @@
-const PrimitiveType = require('.')
-
 /* eslint-disable no-undef */
+
+const PrimitiveType = require('../src/PrimitiveType')
+const { assert } = require('chai')
 
 describe('PrimitiveType', () => {
   it('Devuelve un error si no le paso un argumento', () => {
-    expect(() => { return new PrimitiveType() }).toThrow(TypeError)
+    assert.throws(() => { return new PrimitiveType() }, TypeError)
   })
   it('Devuelve un error si se pasa un argumento invalido', () => {
-    expect(() => { return new PrimitiveType([]) }).toThrow(TypeError)
+    assert.throws(() => { return new PrimitiveType([]) }, TypeError)
   })
   it('Devuelve una funcion', () => {
     const isString = new PrimitiveType('string')
-    expect(typeof isString.test === 'function').toBe(true)
+    assert.isFunction(isString.test)
   })
   describe('Chequear un [Boolean]', () => {
     const isBoolean = new PrimitiveType('boolean')
 
     it('Retorna [true] si le envio un boolean como argumento', () => {
-      expect(isBoolean.test(false)).toBe(true)
+      assert.isTrue(isBoolean.test(false))
     })
     it('Retorna [false] si le envio un null como argumento', () => {
-      expect(isBoolean.test(null)).toBe(false)
+      assert.isFalse(isBoolean.test(null))
     })
     it('Retorna [false] si no envio ningun argumento', () => {
-      expect(isBoolean.test()).toBe(false)
+      assert.isFalse(isBoolean.test())
     })
   })
   describe('Chequear un [Number]', () => {
     const isNumber = new PrimitiveType('number')
 
     it('Retorna [true] si le envio un number como argumento', () => {
-      expect(isNumber.test(0)).toBe(true)
+      assert.isTrue(isNumber.test(0))
     })
     it('Retorna [false] si le envio un array como argumento', () => {
-      expect(isNumber.test([])).toBe(false)
+      assert.isFalse(isNumber.test([]))
     })
     it('Retorna [false] si no envio ningun argumento', () => {
-      expect(isNumber.test()).toBe(false)
+      assert.isFalse(isNumber.test())
     })
   })
   describe('Chequear un [String]', () => {
     const isString = new PrimitiveType('string')
 
     it('Retorna [true] si le envio un string como argumento', () => {
-      expect(isString.test('test')).toBe(true)
+      assert.isTrue(isString.test('test'))
     })
     it('Retorna [false] si le envio un number como argumento', () => {
-      expect(isString.test(0)).toBe(false)
+      assert.isFalse(isString.test(0))
     })
     it('Retorna [false] si no envio ningun argumento', () => {
-      expect(isString.test()).toBe(false)
+      assert.isFalse(isString.test())
     })
   })
 })
