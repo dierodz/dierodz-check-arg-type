@@ -1,15 +1,16 @@
 module.exports = {
-  env: {
-    commonjs: true,
-    es2020: true,
-    node: true
-  },
+  parser: '@typescript-eslint/parser',
   extends: [
-    'standard'
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint', // agrega las reglas de prettier a eslint
+    'plugin:prettier/recommended' // agregar el plugin que integra eslint con prettier
   ],
   parserOptions: {
-    ecmaVersion: 11
+    ecmaVersion: 2020,
+    sourceType: 'module'
   },
   rules: {
+    // Aca puedes modificar alguna regla específica, por ejemplo:
+    // "@typescript-eslint/explicit-function-return-type": "off",
   }
 }

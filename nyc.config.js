@@ -2,7 +2,8 @@ function generate () {
   return {
     all: true,
     include: [
-      `${process.env.BABEL_ENV === 'production' ? 'lib' : 'src'}/**/*.js`
+      `${process.env.BABEL_ENV === 'production' ? 'lib' : 'src'}/**/*.js`,
+      `${process.env.BABEL_ENV === 'production' ? 'lib' : 'src'}/**/*.ts`
     ],
     exclude: [
       '**/*.test.js'
