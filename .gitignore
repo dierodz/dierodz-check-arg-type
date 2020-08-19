@@ -36,6 +36,9 @@ jspm_packages
 # Lib
 lib
 
+# Temp
+temp
+
 # npm package lock
 package-lock.json
 yarn.lock
