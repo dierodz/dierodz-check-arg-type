@@ -29,6 +29,19 @@ describe('PrimitiveType', () => {
       assert.isFalse(isBoolean.test())
     })
   })
+  describe('Chequear un [Function]', () => {
+    const isFunction = new PrimitiveType('function')
+
+    it('Retorna [true] si le envio una function como argumento', () => {
+      assert.isTrue(isFunction.test(() => ';-)'))
+    })
+    it('Retorna [false] si le envio un null como argumento', () => {
+      assert.isFalse(isFunction.test(null))
+    })
+    it('Retorna [false] si no envio ningun argumento', () => {
+      assert.isFalse(isFunction.test())
+    })
+  })
   describe('Chequear un [Number]', () => {
     const isNumber = new PrimitiveType('number')
 
@@ -43,16 +56,16 @@ describe('PrimitiveType', () => {
     })
   })
   describe('Chequear un [Object]', () => {
-    const isString = new PrimitiveType('object')
+    const isObject = new PrimitiveType('object')
 
     it('Retorna [true] si le envio un object como argumento', () => {
-      assert.isTrue(isString.test({ test: 'test' }))
+      assert.isTrue(isObject.test({ test: 'test' }))
     })
     it('Retorna [false] si le envio un number como argumento', () => {
-      assert.isFalse(isString.test(0))
+      assert.isFalse(isObject.test(0))
     })
     it('Retorna [false] si no envio ningun argumento', () => {
-      assert.isFalse(isString.test())
+      assert.isFalse(isObject.test())
     })
   })
   describe('Chequear un [String]', () => {
